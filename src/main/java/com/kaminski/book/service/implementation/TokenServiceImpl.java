@@ -6,6 +6,7 @@ import com.kaminski.book.service.TokenService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 
 @Service
-@AllArgsConstructor
+@AllArgsConstructor @NoArgsConstructor
 public class TokenServiceImpl implements TokenService {
 
     private UserPlatformRepository userPlatformRepository;
@@ -24,7 +25,7 @@ public class TokenServiceImpl implements TokenService {
     @Value("${api.jwt.expiration}")
     private String expiration;
 
-    @Value("${spring.application.name}")
+    @Value("${api.jwt.expiration}")
     private String applicationName;
 
     @Override
