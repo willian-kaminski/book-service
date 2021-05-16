@@ -4,6 +4,7 @@ import com.kaminski.book.model.dto.TokenDTO;
 import com.kaminski.book.model.form.AuthForm;
 import com.kaminski.book.service.AuthService;
 import com.kaminski.book.service.TokenService;
+import com.kaminski.book.service.implementation.AuthenticationService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +24,7 @@ public class AuthenticationController {
     private TokenService tokenService;
 
     @PostMapping
-    public ResponseEntity<TokenDTO> authenticate(@RequestBody @Valid AuthForm authForm){
+    public ResponseEntity<TokenDTO> login(@RequestBody @Valid AuthForm authForm){
         return ResponseEntity.status(HttpStatus.OK).body(authService.auth(authForm, tokenService));
     }
 
