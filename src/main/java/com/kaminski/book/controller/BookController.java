@@ -6,6 +6,7 @@ import com.kaminski.book.model.dto.BookDetailDTO;
 import com.kaminski.book.model.form.BookForm;
 import com.kaminski.book.service.BookService;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
+@NoArgsConstructor
 @AllArgsConstructor
 @RequestMapping("api/v1/books")
 public class BookController {
@@ -31,7 +33,7 @@ public class BookController {
 
     @GetMapping("/{id}")
     public ResponseEntity<BookDetailDTO> findById(@PathVariable Integer id){
-        var book = bookService.getProduct(id);
+        var book = bookService.getBook(id);
         return ResponseEntity.status(HttpStatus.OK).body(new BookDetailDTO(book));
     }
 

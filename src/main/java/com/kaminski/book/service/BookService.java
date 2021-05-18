@@ -11,7 +11,7 @@ public interface BookService {
 
     List<Book> listAll();
 
-    Book getProduct(Integer id);
+    Book getBook(Integer id);
 
     Book create(BookForm book);
 

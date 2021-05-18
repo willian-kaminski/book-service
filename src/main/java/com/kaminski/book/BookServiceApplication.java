@@ -1,10 +1,6 @@
 package com.kaminski.book;
 
-import com.kaminski.book.entity.Category;
-import com.kaminski.book.entity.Profile;
 import com.kaminski.book.entity.UserPlatform;
-import com.kaminski.book.service.BookService;
-import com.kaminski.book.service.CategoryService;
 import com.kaminski.book.service.ProfileService;
 import com.kaminski.book.service.UserPlatformService;
 import com.kaminski.book.utils.HashGenerate;

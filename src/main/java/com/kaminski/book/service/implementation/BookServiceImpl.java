@@ -37,9 +37,8 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Book getProduct(Integer id) {
+    public Book getBook(Integer id) {
 
-        validation.verifyIfBookExists(id);
         Optional<Book> book = bookRepository.findById(id);
 
         if(book.isPresent())
@@ -75,7 +74,7 @@ public class BookServiceImpl implements BookService {
         validation.verifyIfBookIsRented(id);
         validation.verifyIfCategoryExists(bookForm.getCategoryId());
 
-        var bookDB = getProduct(id);
+        var bookDB = getBook(id);
         bookDB.setTitle(bookForm.getTitle());
         bookDB.setIsbn(bookForm.getIsbn());
         bookDB.setDescription(bookForm.getDescription());
@@ -92,7 +91,7 @@ public class BookServiceImpl implements BookService {
         validation.verifyIfBookExists(id);
         validation.verifyIfBookIsRented(id);
 
-        var book = getProduct(id);
+        var book = getBook(id);
         book.setStatus(String.valueOf(BookStatus.REMOVED));
 
         return bookRepository.save(book);
@@ -110,7 +109,7 @@ public class BookServiceImpl implements BookService {
         validation.verifyIfBookExists(id);
         validation.verifyIfBookIsRented(id);
 
-        var book = getProduct(id);
+        var book = getBook(id);
         book.setStatus(String.valueOf(BookStatus.RENTED));
 
         return bookRepository.save(book);
