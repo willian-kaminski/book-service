@@ -15,7 +15,7 @@ import javax.validation.Valid;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("api/v1/rentals")
+@RequestMapping("api/v1/rental")
 public class RentController {
 
     private BookService bookService;
