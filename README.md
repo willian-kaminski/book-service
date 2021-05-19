@@ -2,7 +2,7 @@
 
 Api para o registro e aluguel de livros
 
-Back-end desenvolvido utilizando Spring boot + Spring data JPA + Maven + JUnit + JAVA 8 + SQLITE + Lombok + SonarLint.
+Back-end desenvolvido utilizando Spring boot + Spring data JPA + Maven + JUnit + Mockito + JAVA 8 + SQLITE + Lombok + SonarLint.
 
 Obs: 
 
