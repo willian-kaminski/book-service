@@ -46,7 +46,7 @@ public class BookController {
     @PutMapping("/{id}")
     public ResponseEntity<BookDTO> update(@PathVariable Integer id, @RequestBody @Valid BookForm bookForm){
         Book book = bookService.update(id, bookForm);
-        return ResponseEntity.status(HttpStatus.CREATED).body(new BookDTO(book));
+        return ResponseEntity.status(HttpStatus.OK).body(new BookDTO(book));
     }
 
     @DeleteMapping("/{id}")

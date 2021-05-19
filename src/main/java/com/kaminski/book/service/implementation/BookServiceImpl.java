@@ -39,6 +39,7 @@ public class BookServiceImpl implements BookService {
     @Override
     public Book getBook(Integer id) {
 
+        validation.verifyIfBookExists(id);
         Optional<Book> book = bookRepository.findById(id);
 
         if(book.isPresent())
